@@ -4,12 +4,12 @@
 
 # Site
 title: EggBorn.js
-subtitle: The Ultimate Javascript Full Stack Framework
-description: The Ultimate Javascript Full Stack Framework
+subtitle: 一款顶级Javascript全栈开发框架
+description: 一款顶级Javascript全栈开发框架
 author: zhennann
 language:
-  - en
   - zh-cn
+  - en
 timezone: Asia/Shanghai
 keywords:
   - EggBorn
@@ -18,11 +18,12 @@ keywords:
   - Framework7
   - Javascript
   - Full Stack
-  
+  - 全栈开发框架
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://egg-born.org
-root: /en
+root: /zh-cn
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
