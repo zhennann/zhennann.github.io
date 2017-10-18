@@ -121,6 +121,7 @@
 
                             var active = toc.querySelector('a[href="#' + titles[i].id + '"]').parentNode;
                             active.classList.add('active');
+                            active.scrollIntoView(false);
                         }
                     }
 
