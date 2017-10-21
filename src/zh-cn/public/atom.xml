@@ -5,9 +5,9 @@
   <subtitle>一款顶级Javascript全栈开发框架</subtitle>
   <link href="/zh-cn/atom.xml" rel="self"/>
   
-  <link href="https://zhennann.github.io/"/>
+  <link href="https://zhennann.github.io/zh-cn/"/>
   <updated>2017-10-21T17:57:18.000Z</updated>
-  <id>https://zhennann.github.io/</id>
+  <id>https://zhennann.github.io/zh-cn/</id>
   
   <author>
     <name>zhennann</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>EggBorn.js开发指南</title>
-    <link href="https://zhennann.github.io/docs/tutorial/"/>
-    <id>https://zhennann.github.io/docs/tutorial/</id>
+    <link href="https://zhennann.github.io/zh-cn/docs/tutorial/"/>
+    <id>https://zhennann.github.io/zh-cn/docs/tutorial/</id>
     <published>2017-10-17T10:18:14.000Z</published>
     <updated>2017-10-21T17:57:18.000Z</updated>
     
@@ -35,7 +35,7 @@
     
     </summary>
     
-      <category term="docs" scheme="https://zhennann.github.io/categories/docs/"/>
+      <category term="docs" scheme="https://zhennann.github.io/zh-cn/categories/docs/"/>
     
     
   </entry>
