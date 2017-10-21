@@ -117,9 +117,9 @@ uyan_uid: false
 // gitment: false
 gitment:
   owner: zhennann
-  repo: https://github.com/zhennann/egg-born
-  client_id: 305fee5f53becf5781df
-  client_secret: 3015f98b9550e1747f5fb6c91f510d5dfa1a34b7
+  repo: egg-born
+  client_id: 27c787d72ea5b6a120ef
+  client_secret: ace16b4eff1cd9eb3c84e7519815e3857ac098c6
 
 # 规范网址
 # 让搜索引擎重定向你的不同域名、不同子域、同域不同目录的站点到你期望的路径
