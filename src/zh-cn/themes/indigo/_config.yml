@@ -103,10 +103,10 @@ google_analytics: false
 google_site_verification: false
 
 # less
-less:
-  compress: true
-  paths:
-    - source/css/style.less
+# less:
+#   compress: true
+#   paths:
+#     - source/css/style.less
 
 # 以下评论插件开启一个即可
 # 是否开启 disqus
