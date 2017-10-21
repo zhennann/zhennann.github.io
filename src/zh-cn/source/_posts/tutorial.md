@@ -1,5 +1,6 @@
 ---
 title: EggBorn.js开发指南
+caption: tutorial
 date: 2017-10-17 18:18:14
 category: docs
 ---
