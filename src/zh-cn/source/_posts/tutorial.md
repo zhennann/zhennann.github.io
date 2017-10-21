@@ -5,7 +5,12 @@ category: docs
 ---
 
 ## EggBorn.js是什么
-EggBorn.js是采用Javascript进行全栈开发的最佳实践。EggBorn.js不重复造轮子，而是采用业界最新的开源技术，进行全栈开发的最佳组合。前端采用Vue.js + Framework7 / Vue Router + Webpack，后端采用Koa.js + Egg.js，数据库采用mysql。EggBorn时刻跟踪开源技术的最新成果，并持续优化，使整个框架时刻保持最佳状态。
+> EggBorn.js是一款顶级Javascript全栈开发框架。
+
+EggBorn.js是采用Javascript进行全栈开发的最佳实践。
+EggBorn.js不重复造轮子，而是采用业界最新的开源技术，进行全栈开发的最佳组合。
+EggBorn.js前端采用Vue.js + Framework7 / Vue Router + Webpack，后端采用Koa.js + Egg.js，数据库采用mysql。
+EggBorn.js时刻跟踪开源技术的最新成果，并持续优化，使整个框架时刻保持最佳状态。
 
 ## EggBorn.js重点解决什么问题：业务模块化
 Javascript技术的蓬勃发展，为前后端开发带来了更顺畅的体验，显著提升了开发效率。但仍有网友质疑Javascript能否胜任大型Web应用的开发。大型Web应用的特点是随着业务的增长，需要开发大量的页面组件。面对这种场景，一般有两种解决方案：
