@@ -652,10 +652,10 @@ var BLOG = { ROOT: '/zh-cn/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = 'I'm waiting for you';
+            document.title = "I'm waiting for you";
             clearTimeout(titleTime);
         } else {
-            document.title = 'Welcome back';
+            document.title = "Welcome back";
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
