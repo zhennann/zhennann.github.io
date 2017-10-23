@@ -31,10 +31,10 @@
 <meta name="keywords" content="EggBorn,Egg,Vue,Framework7,Javascript,Full Stack,全栈开发框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EggBorn.js开发指南">
-<meta property="og:url" content="https://zhennann.github.io/zh-cn/docs/tutorial/index.html">
+<meta property="og:url" content="https://zhennann.github.io/zh-cn/en/docs/tutorial/index.html">
 <meta property="og:site_name" content="EggBorn.js">
 <meta property="og:description" content="EggBorn.js是什么 EggBorn.js是一款顶级Javascript全栈开发框架。  EggBorn.js是采用Javascript进行全栈开发的最佳实践。EggBorn.js不重复造轮子，而是采用业界最新的开源技术，进行全栈开发的最佳组合。EggBorn.js前端采用Vue.js + Framework7 / Vue Router + Webpack，后端采用Koa.js + Egg.">
-<meta property="og:locale" content="zh-cn">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="https://zhennann.github.io/zh-cn/images/EggBornJS.png">
 <meta property="og:image" content="https://zhennann.github.io/zh-cn/images/structure.png">
 <meta property="og:image" content="https://zhennann.github.io/zh-cn/images/privatemodule.png">
@@ -139,7 +139,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -179,7 +179,7 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>目录</h4>
+            <h4>TOC</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#EggBorn-js是什么"><span class="post-toc-number">1.</span> <span class="post-toc-text">EggBorn.js是什么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#EggBorn-js重点解决什么问题：业务模块化"><span class="post-toc-number">2.</span> <span class="post-toc-text">EggBorn.js重点解决什么问题：业务模块化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#EggBorn-js的技术特点"><span class="post-toc-number">3.</span> <span class="post-toc-text">EggBorn.js的技术特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快速上手"><span class="post-toc-number">4.</span> <span class="post-toc-text">快速上手</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装EggBorn-js脚手架"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">安装EggBorn.js脚手架</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建项目"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">新建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置mysql连接参数"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">配置mysql连接参数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运行项目"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">运行项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#EggBorn-js架构图"><span class="post-toc-number">5.</span> <span class="post-toc-text">EggBorn.js架构图</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#系统架构"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">系统架构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#项目文件结构"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">项目文件结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块文件结构"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">模块文件结构</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模块开发"><span class="post-toc-number">6.</span> <span class="post-toc-text">模块开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命名约定"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">命名约定</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#加载机制"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">加载机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#新建模块"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">新建模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块前端开发"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">模块前端开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前端页面路由"><span class="post-toc-number">6.4.1.</span> <span class="post-toc-text">前端页面路由</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前端状态管理"><span class="post-toc-number">6.4.2.</span> <span class="post-toc-text">前端状态管理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前端参数配置"><span class="post-toc-number">6.4.3.</span> <span class="post-toc-text">前端参数配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#前端国际化"><span class="post-toc-number">6.4.4.</span> <span class="post-toc-text">前端国际化</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块后端开发"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">模块后端开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端api路由"><span class="post-toc-number">6.5.1.</span> <span class="post-toc-text">后端api路由</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端Controller"><span class="post-toc-number">6.5.2.</span> <span class="post-toc-text">后端Controller</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端Service"><span class="post-toc-number">6.5.3.</span> <span class="post-toc-text">后端Service</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端Controller调用"><span class="post-toc-number">6.5.4.</span> <span class="post-toc-text">后端Controller调用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端数据库操作"><span class="post-toc-number">6.5.5.</span> <span class="post-toc-text">后端数据库操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端数据库事务"><span class="post-toc-number">6.5.6.</span> <span class="post-toc-text">后端数据库事务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端参数配置"><span class="post-toc-number">6.5.7.</span> <span class="post-toc-text">后端参数配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端国际化"><span class="post-toc-number">6.5.8.</span> <span class="post-toc-text">后端国际化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后端错误处理"><span class="post-toc-number">6.5.9.</span> <span class="post-toc-text">后端错误处理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模块管理"><span class="post-toc-number">7.</span> <span class="post-toc-text">模块管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块依赖"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">模块依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块数据版本"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">模块数据版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块发布"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">模块发布</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试驱动"><span class="post-toc-number">8.</span> <span class="post-toc-text">测试驱动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后端Controller测试"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">后端Controller测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后端Service测试"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">后端Service测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行测试"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">执行测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端架构配置"><span class="post-toc-number">9.</span> <span class="post-toc-text">前端架构配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前端启动文件"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">前端启动文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前端参数配置-1"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">前端参数配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前端国际化-1"><span class="post-toc-number">9.3.</span> <span class="post-toc-text">前端国际化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后端架构配置"><span class="post-toc-number">10.</span> <span class="post-toc-text">后端架构配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后端架构"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">后端架构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后端参数配置-1"><span class="post-toc-number">10.2.</span> <span class="post-toc-text">后端参数配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后端国际化-1"><span class="post-toc-number">10.3.</span> <span class="post-toc-text">后端国际化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目部署"><span class="post-toc-number">11.</span> <span class="post-toc-text">项目部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构建前端代码"><span class="post-toc-number">11.1.</span> <span class="post-toc-text">构建前端代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动后端服务"><span class="post-toc-number">11.2.</span> <span class="post-toc-text">启动后端服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#停止后端服务"><span class="post-toc-number">11.3.</span> <span class="post-toc-text">停止后端服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#后端服务启动参数配置"><span class="post-toc-number">11.4.</span> <span class="post-toc-text">后端服务启动参数配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nginx配置"><span class="post-toc-number">11.5.</span> <span class="post-toc-text">nginx配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GitHub贡献"><span class="post-toc-number">12.</span> <span class="post-toc-text">GitHub贡献</span></a></li></ol>
         </nav>
     </aside>
@@ -432,7 +432,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-10-23T14:35:43.000Z" itemprop="dateUpdated">2017-10-23 22:35:43</time>
+    Last updated: <time datetime="2017-10-23T14:35:43.000Z" itemprop="dateUpdated">2017-10-23 22:35:43</time>
 </span><br>
 
 
@@ -459,7 +459,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhennann.github.io/zh-cn/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=https://zhennann.github.io/zh-cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhennann.github.io/zh-cn/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=https://zhennann.github.io/zh-cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -469,22 +469,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhennann.github.io/zh-cn/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=一款顶级Javascript全栈开发框架" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhennann.github.io/zh-cn/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=一款顶级Javascript全栈开发框架" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhennann.github.io/zh-cn/docs/tutorial/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhennann.github.io/zh-cn/en/docs/tutorial/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=https://zhennann.github.io/zh-cn/docs/tutorial/&via=https://zhennann.github.io/zh-cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=https://zhennann.github.io/zh-cn/en/docs/tutorial/&via=https://zhennann.github.io/zh-cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhennann.github.io/zh-cn/docs/tutorial/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhennann.github.io/zh-cn/en/docs/tutorial/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -553,7 +553,7 @@
                 <span><a href="/zh-cn/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
             
-            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
               
         </p>
         
@@ -580,7 +580,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhennann.github.io/zh-cn/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=https://zhennann.github.io/zh-cn/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhennann.github.io/zh-cn/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=https://zhennann.github.io/zh-cn/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -590,22 +590,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhennann.github.io/zh-cn/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=一款顶级Javascript全栈开发框架" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhennann.github.io/zh-cn/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=一款顶级Javascript全栈开发框架" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhennann.github.io/zh-cn/docs/tutorial/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhennann.github.io/zh-cn/en/docs/tutorial/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=https://zhennann.github.io/zh-cn/docs/tutorial/&via=https://zhennann.github.io/zh-cn" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=https://zhennann.github.io/zh-cn/en/docs/tutorial/&via=https://zhennann.github.io/zh-cn" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhennann.github.io/zh-cn/docs/tutorial/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhennann.github.io/zh-cn/en/docs/tutorial/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -616,7 +616,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3aS27DMAwFwNz/0i7QbRr7kYwLWBqtAtRQNVoQ/Oj1itfxuybfH28r/+vXFgYGxmMZx+lKjpXsmX/z/vv8bBgYGPswzoPmJ0YSjpODJl9enBkDAwNjkNIlyOoFYWBgYCRhsfePP4XUPCXFwMDYmZFs10vjeuH7xlocAwPjgYxqo/8/f98438DAwHgI4xisamMuTwHLJ8HAwFiakQwj50G5l+RVU08MDIwdGEng+9ZIIG/J5UgMDIy1GfnheuXopE02aqthYGAsxOglZ/nQcQ6OrgADA2NpRq81X00Z8/FntfWGgYGxNqO3UX6sJFBOgjgGBsYOjLxcnBe0ecGcwzAwMHZm9IJpfqzqxZ1fIgYGxg6M3jOIfKDYSxnLowsMDIxFGdVHD5PR5qR5d7EzBgbGZozqM6xeHlotTcszWAwMjOUYeVPs7itIRgJ/7ICBgbEBo9p0q4bI/PveuBQDA2NtRu/o5wODyfOLHhgDA2M3RvWBxflB8yZdHnajGSwGBsaijGraNylre0VsoemGgYGxHKMagueB+FvDzvLcAwMD44GMo7iq8S0vfXtDAgwMjB0Yd2RZeUidPAXLLxcDA2MNRhJkqy3+aiOvl8NiYGDsxkjaYb3nEeUausfDwMDACEaVvUcY+djg4swYGBgY1Udacek7L3oxMDD2YfTC6PxZWG8IgYGBsRtjMhjIC9Rqw64arDEwMBZl/ACqXAPxY9O7iQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aQXLDIBAEQP//08oDXFJmwHJZ0Jx0wIhWqjbLsq9XPI630c58/9XZnOv1pwYGBsZjGcfluJ6TrJyscP0cvR0DA2MDRrKJJPi2QTYJwdd7w8DAwBjbXJLwte/FwMDAGAu4YzN/7v8GBgbGQxj5IbM91iap5FfP4hgYGA9k5FX37z/fcr+BgYHxKMZRjvbAma92TAwMDIy1GXmAy1PGz15hJvvBwMDYk/GpQDlDvS6uRVVDDAyMhRjt0TFP1/L2sqSZY/BvgoGB8XDG/KLzBf36e7ffFQMDYyFGcq14XzD9QEMYBgbGooy8VWu+6NaG7GRvGBgYGG2gTApn7fy8VIeBgbEqI3lNm961V5J5snj6ITAwMDZgtFvJ8UkulxfaTtfHwMDYgJE852W1ljFWYsPAwNiHMdOYNdOiMdOCdroaBgbGlow2IOaH26kLgDbgYmBgPJwxlt7NNGG06WbdM4KBgbEcoy1stS/OE8GZT4CBgbEnY+ZQOlZcy5vDTmdiYGBswGiDY34J2jZbJI0d/+S5GBgYizLa9oskWM+klXVRDwMDY1HGUY484cu3OBZk64sBDAyMxzLGjqxtyT45oOZheqrChoGB8VhGEmTz5YpS/sQnKzJHDAyMhRjtEXRsK23DWYHEwMDAKLeerDZ25VC0hWFgYGAEB9E24CZbvzHgYmBg/Dwjb3rIy/pjW8yjKAYGxj6MtpY1xr6jAIeBgbEB4w9gkRkGnfleTwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
