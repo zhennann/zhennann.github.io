@@ -35,6 +35,9 @@ menu:
   link-eggjs:
     text: Egg.js
     url: https://eggjs.org
+  link-koa:
+    text: Koa
+    url: http://koajs.com
 
 # 你的头像url
 avatar: /img/avatar.jpg
@@ -43,7 +46,7 @@ avatar_link: https://github.com/zhennann/egg-born
 # 头像背景图
 brand: /img/brand.jpg
 # favicon
-favicon: /favicon.ico
+favicon: /images/eggborn.svg
 
 # email
 email: zhen.nann@icloud.com

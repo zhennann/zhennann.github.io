@@ -48,6 +48,7 @@
         <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%- url_for(config.feed.path) %>">
     <% } %>
     <%- favicon_tag(theme.favicon) %>
+    <link rel="icon" sizes="any" mask href="<%- url_for(theme.favicon) %>">
     <link rel="stylesheet" href="<%- url_for(theme_css('/css/style', cache)) %>">
     <script>window.lazyScripts=[]</script>
 
