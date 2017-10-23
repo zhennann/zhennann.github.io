@@ -276,7 +276,7 @@ module.exports = app => {
 };
 ```
 
-> 与Egg.js不同之处在于，Service使用ctx.db操作数据库，从而自动支持数据库事务。
+> 与Egg.js不同之处在于，Service使用`ctx.db`操作数据库，从而自动支持数据库事务。
 
 > 更多信息，请参阅: [Egg.js Service](https://eggjs.org/zh-cn/basics/service.html)
 

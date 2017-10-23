@@ -9,7 +9,6 @@ description: The Ultimate Javascript Full Stack Framework
 author: zhennann
 language:
   - en
-  - zh-cn
 timezone: Asia/Shanghai
 keywords:
   - EggBorn
@@ -21,7 +20,7 @@ keywords:
   
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zhennann.github.io/en
+url: http://egg-born.org/en
 root: /en/
 permalink: :category/:title/
 permalink_defaults:

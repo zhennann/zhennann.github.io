@@ -9,7 +9,6 @@ description: 一款顶级Javascript全栈开发框架
 author: zhennann
 language:
   - zh-cn
-  - en
 timezone: Asia/Shanghai
 keywords:
   - EggBorn
@@ -22,7 +21,7 @@ keywords:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zhennann.github.io/zh-cn
+url: http://egg-born.org/zh-cn
 root: /zh-cn/
 permalink: :category/:title/
 permalink_defaults:

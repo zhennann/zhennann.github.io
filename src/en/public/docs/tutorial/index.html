@@ -31,23 +31,23 @@
 <meta name="keywords" content="EggBorn,Egg,Vue,Framework7,Javascript,Full Stack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EggBorn.js开发指南">
-<meta property="og:url" content="https://zhennann.github.io/en/docs/tutorial/index.html">
+<meta property="og:url" content="http://egg-born.org/en/docs/tutorial/index.html">
 <meta property="og:site_name" content="EggBorn.js">
 <meta property="og:description" content="EggBorn.js是什么 EggBorn.js是一款顶级Javascript全栈开发框架。  EggBorn.js是采用Javascript进行全栈开发的最佳实践。EggBorn.js不重复造轮子，而是采用业界最新的开源技术，进行全栈开发的最佳组合。EggBorn.js前端采用Vue.js + Framework7 / Vue Router + Webpack，后端采用Koa.js + Egg.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://zhennann.github.io/zh-cn/images/EggBornJS.png">
-<meta property="og:image" content="https://zhennann.github.io/zh-cn/images/structure.png">
-<meta property="og:image" content="https://zhennann.github.io/zh-cn/images/privatemodule.png">
-<meta property="og:image" content="https://zhennann.github.io/zh-cn/images/publicmodule.png">
-<meta property="og:updated_time" content="2017-10-23T15:24:32.000Z">
+<meta property="og:image" content="http://egg-born.org/zh-cn/images/EggBornJS.png">
+<meta property="og:image" content="http://egg-born.org/zh-cn/images/structure.png">
+<meta property="og:image" content="http://egg-born.org/zh-cn/images/privatemodule.png">
+<meta property="og:image" content="http://egg-born.org/zh-cn/images/publicmodule.png">
+<meta property="og:updated_time" content="2017-10-23T15:34:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EggBorn.js开发指南">
 <meta name="twitter:description" content="EggBorn.js是什么 EggBorn.js是一款顶级Javascript全栈开发框架。  EggBorn.js是采用Javascript进行全栈开发的最佳实践。EggBorn.js不重复造轮子，而是采用业界最新的开源技术，进行全栈开发的最佳组合。EggBorn.js前端采用Vue.js + Framework7 / Vue Router + Webpack，后端采用Koa.js + Egg.">
-<meta name="twitter:image" content="https://zhennann.github.io/zh-cn/images/EggBornJS.png">
+<meta name="twitter:image" content="http://egg-born.org/zh-cn/images/EggBornJS.png">
     
         <link rel="alternate" type="application/atom+xml" title="EggBorn.js" href="/en/atom.xml">
     
-    <link rel="shortcut icon" href="/en/images/eggborn.svg">
+    
     <link rel="icon" sizes="any" mask href="/en/images/eggborn.svg">
     <link rel="stylesheet" href="/en/css/style.css?v=1.6.16">
     <script>window.lazyScripts=[]</script>
@@ -329,7 +329,7 @@
 </blockquote>
 <h4 id="后端Service"><a href="#后端Service" class="headerlink" title="后端Service"></a>后端Service</h4><p>Service用于封装业务逻辑，供Controller调用，实现方式与Egg.js保持一致。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">app</span> =&gt;</span> &#123;</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">app</span>.<span class="title">Service</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">async</span> index() &#123;</div><div class="line">      <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="keyword">this</span>.ctx.db.queryOne(<span class="string">'show tables'</span>);</div><div class="line">      <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> Home;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>与Egg.js不同之处在于，Service使用ctx.db操作数据库，从而自动支持数据库事务。</p>
+<p>与Egg.js不同之处在于，Service使用<code>ctx.db</code>操作数据库，从而自动支持数据库事务。</p>
 <p>更多信息，请参阅: <a href="https://eggjs.org/zh-cn/basics/service.html" target="_blank" rel="external">Egg.js Service</a></p>
 </blockquote>
 <h4 id="后端Controller调用"><a href="#后端Controller调用" class="headerlink" title="后端Controller调用"></a>后端Controller调用</h4><p>为了支持大型Web系统的开发，EggBorn.js支持模块后端Controller之间的调用，如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> message = <span class="keyword">await</span> <span class="keyword">this</span>.ctx.performAction(&#123;</div><div class="line">  method: <span class="string">'get'</span>,</div><div class="line">  url: <span class="string">'home/index'</span>,</div><div class="line">  query: &#123;</div><div class="line">    username: <span class="string">'kevin'</span>,</div><div class="line">  &#125;,</div><div class="line">  params: &#123;</div><div class="line">    mode: <span class="number">1</span>,</div><div class="line">  &#125;,</div><div class="line">  body: &#123;</div><div class="line">    content: <span class="string">'ready'</span>,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
@@ -432,14 +432,14 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-10-23T15:24:32.000Z" itemprop="dateUpdated">2017-10-23 23:24:32</time>
+    Last updated: <time datetime="2017-10-23T15:34:50.000Z" itemprop="dateUpdated">2017-10-23 23:34:50</time>
 </span><br>
 
 
         
     </div>
     <footer>
-        <a href="https://zhennann.github.io/en">
+        <a href="http://egg-born.org/en">
             <img src="/en/img/avatar.jpg" alt="zhennann">
             zhennann
         </a>
@@ -459,7 +459,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhennann.github.io/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=https://zhennann.github.io/en/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://egg-born.org/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=http://egg-born.org/en/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -469,22 +469,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhennann.github.io/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=The Ultimate Javascript Full Stack Framework" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://egg-born.org/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=The Ultimate Javascript Full Stack Framework" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhennann.github.io/en/docs/tutorial/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://egg-born.org/en/docs/tutorial/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=https://zhennann.github.io/en/docs/tutorial/&via=https://zhennann.github.io/en" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=http://egg-born.org/en/docs/tutorial/&via=http://egg-born.org/en" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhennann.github.io/en/docs/tutorial/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://egg-born.org/en/docs/tutorial/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -578,7 +578,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://zhennann.github.io/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=https://zhennann.github.io/en/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://egg-born.org/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&pic=http://egg-born.org/en/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -588,22 +588,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://zhennann.github.io/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=The Ultimate Javascript Full Stack Framework" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://egg-born.org/en/docs/tutorial/&title=《EggBorn.js开发指南》 — EggBorn.js&source=The Ultimate Javascript Full Stack Framework" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://zhennann.github.io/en/docs/tutorial/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://egg-born.org/en/docs/tutorial/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=https://zhennann.github.io/en/docs/tutorial/&via=https://zhennann.github.io/en" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《EggBorn.js开发指南》 — EggBorn.js&url=http://egg-born.org/en/docs/tutorial/&via=http://egg-born.org/en" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://zhennann.github.io/en/docs/tutorial/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://egg-born.org/en/docs/tutorial/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -614,7 +614,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3aQXIDIQxE0bn/pfE6ZQ/pbsEC8Vm5ksHD80IlJD2PvMbX+v7v/Mm3XW97nx0LBgwYxzLGdM1fMH/xnPeGVHb9eCMMGDAuYCiHUEKwAtP3KmeDAQMGjHkQrDw/z/FgwIABo87QD5H9BQYMGDCyS+y+Up2SLC67i8OAAeNARiVd2/15S38DBgwYRzGGudzXu+FyRAsGDBi9GXqAU0pslRam/p2v54EBA0ZTRhYu9YPWy3MSDAYMGK0ZdvG9UFDTGwPuDw0DBow7GXoT0X1SD7526Q0GDBhNGVmJzW18LhtRfftRYMCAcQFDv466hbPK5dYI1jBgwLiAUSmQZS+ul+T+fIYBA0Zrhtt01K+a7hH14K4U6WDAgNGP4V5H3aGuSuA2QjkMGDBaM5RBB3eQKxs1W/D9MGDAaMeotAHcIDt/izuCFt7FYcCAcSDDTe/WFtqUlDRcMGDAaMTIAm4lmGZX1n+CLAwYMFoz3FCoX331FDMbI7OTQhgwYBzOWBUclZKZO4im7IIBA8ZtjKwZoCeF2UGlxBEGDBgXMNymoxuaV5XY7B4sDBgwDmcMcym79JCthGAjKYQBA0ZTRtYlzPbqAxP60UvNThgwYBzF0AOoGzSznyBsSMCAAeMCRiVQZmllBSk1BmDAgHE9w71YupdSd4wDBgwYMLKmo96ArDwPAwaMexhZSucmjm5bdMtdHAYMGAcyshGHrKmpH0IfO4MBA0Zrxgc5gtsZs5alnwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABx0lEQVR42u3awYrDMAxF0f7/T2e2A23MfZKtpnC9Kg11Dl08LMmvF17Xv3X3zfv370/Xv9225MqV2+Zey8URdzuv38INcuXKneeSl5Fo47HFfytXrtznc/nhhu8gV67cX+emRVF/f7ly5X6L24mhtI/BSyO5cuV+i1trcOz9fKS/K1eu3BL3ClcnntLw+rC/XLlyR7g8UPjwozZK4e+VK1fuaW7nqsSuQSwvluTKlTvDJax1+5K3S/rHHbly5c5weQHDQTyS4pJJrly549y9vcpdg5PbIJMrV+4xbnr4QNcjwMiE74nOYnLlyt3KXbc20tIoLZbigkquXLmD3M7wg49YagepD8WPXLlyD3P5yaEWSf1bVUHxI1eu3APcdEDSemWpiJIrV+48l49I+ywyXEG5K1eu3MPcNGJ4o5McmHgDV65cuZNcXuqQIONRFf9BcuXKPcyttSr4GLXWHt12B0SuXLklbjouTeMpDUcSsnLlyp3h1i5cpiMW0nJFT+XKlTvI7cRQrdnB2yty5cp9PrfW7uRDGtQckStX7uO5HJSWW8HkR65cuQe4/GpF59JVrVEiV67ceW4aK6hECUupzs5y5crdyv0DH/bDQnjeP6YAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
