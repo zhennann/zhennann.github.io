@@ -307,8 +307,8 @@ const message = await this.ctx.performAction({
 > 更多信息，请参阅: [Egg.js MySQL](https://eggjs.org/zh-cn/tutorials/mysql.html)
 
 #### 后端数据库事务
-EggBorn.js提供了更为便利的数据库事务实现方式，只需在后端api路由记录中配置transaction参数，Service使用ctx.db操作数据库。
-如果是主Controller通过ctx.performAction调用子Controller，数据库事务开启规则如下：
+EggBorn.js提供了更为便利的数据库事务实现方式，只需在后端api路由记录中配置`transaction`参数，Service使用`ctx.db`操作数据库。
+如果是主Controller通过`ctx.performAction`调用子Controller，数据库事务开启规则如下：
 
 | 主Controller配置 | 子Controller配置 | 子Controller实际启用 |
 |:----------------|:----------------|:-------------------- |

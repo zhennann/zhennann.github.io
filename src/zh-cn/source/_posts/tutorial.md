@@ -149,8 +149,8 @@ export default [
 
 在页面中引用页面组件，请使用绝对路径，如
 ``` html
-<f7-list-item link="`/aa/hello/welcome`/You" title="Welcome"></f7-list-item>
-<f7-list-item link="`/aa/hello/profile`" title="Profile"></f7-list-item>
+<f7-list-item link="/aa/hello/welcome/You" title="Welcome"></f7-list-item>
+<f7-list-item link="/aa/hello/profile" title="Profile"></f7-list-item>
 ```
 
 #### 前端状态管理
@@ -170,12 +170,12 @@ export default function(Vue) {
 
 在页面组件中访问本模块状态
 ``` javascript
-const message = this.`$local.state`.message;
+const message = this.$local.state.message;
 ```
 
 在页面组件中访问其他模块状态
 ``` javascript
-const message = this.`$store.state[providerId][moduleName]`.message;
+const message = this.$store.state[providerId][moduleName].message;
 ```
 
 > 更多信息，请参阅: [Vuex](https://vuex.vuejs.org/)
@@ -190,7 +190,7 @@ export default {
 
 只支持在页面组件中访问本模块内部的参数配置
 ``` javascript
-const mode = this.`$config`.mode;
+const mode = this.$config.mode;
 ```
 
 #### 前端国际化
@@ -205,8 +205,8 @@ export default {
 
 国际化语言采取全局合并的方式，有利于语言资源的共享，在页面组件中访问方式如下
 ``` javascript
-const mode = this.`$text`('mode');
-const message = this.`$text`("Hello world! I'm %s.",'zhennann');
+const mode = this.$text('mode');
+const message = this.$text("Hello world! I'm %s.",'zhennann');
 ```
 
 ### 模块后端开发
@@ -229,14 +229,14 @@ module.exports = [
 
 在前端页面组件中访问本模块api路由
 ``` javascript
-this.`$api.get`('home/index').then(data => {
+this.$api.get('home/index').then(data => {
 }).catch(err => {
 });
 ```
 
 在前端页面组件中访问其他模块api路由
 ``` javascript
-this.`$api.get`('/providerId/moduleName/home/index').then(data => {
+this.$api.get('/providerId/moduleName/home/index').then(data => {
 }).catch(err => {
 });
 ```
@@ -248,7 +248,7 @@ module.exports = app => {
   class HomeController extends app.Controller {
 
     async index() {
-      const message = await this.`service.home`.index();
+      const message = await this.service.home.index();
       this.ctx.success(message);
     }
 
@@ -266,7 +266,7 @@ module.exports = app => {
   class Home extends app.Service {
 
     async index() {
-      const res = await this.`ctx.db`.queryOne('show tables');
+      const res = await this.ctx.db.queryOne('show tables');
       return res;
     }
 
@@ -283,7 +283,7 @@ module.exports = app => {
 #### 后端Controller调用
 为了支持大型Web系统的开发，EggBorn.js支持模块后端Controller之间的调用，如
 ``` javascript
-const message = await this.`ctx.performAction`({
+const message = await this.ctx.performAction({
   method: 'get',
   url: 'home/index',
   query: {
@@ -331,7 +331,7 @@ module.exports = appInfo => {
 
 访问本模块内部的参数配置示例如下
 ``` javascript
-const message = this.`ctx.config`.message;
+const message = this.ctx.config.message;
 ```
 
 #### 后端国际化
@@ -346,8 +346,8 @@ module.exports = {
 
 国际化语言采取全局合并的方式，有利于语言资源的共享，访问方式如下
 ``` javascript
-const notFound = this.`ctx.text`('not found');
-const message = this.`ctx.text`("Hello world! I'm %s.", 'zhennann');
+const notFound = this.ctx.text('not found');
+const message = this.ctx.text("Hello world! I'm %s.", 'zhennann');
 ```
 
 #### 后端错误处理
@@ -361,12 +361,12 @@ module.exports = {
 
 返回错误信息示例如下
 ``` javascript
-this.`ctx.fail`(1001);
+this.ctx.fail(1001);
 ```
 
 也可抛出异常示例如下
 ``` javascript
-this.`ctx.throw`(1001);
+this.ctx.throw(1001);
 ```
 
 ## 模块管理
@@ -522,13 +522,13 @@ Vue Router是Vue.js官方路由库，使用Vue Router可搭配其他各种UI界�
 // choose one
 
 //   framework7
-import `main` from './framework7/main.js';
+import main from './framework7/main.js';
 
 //   vuerouter
-// import `main` from './vuerouter/main.js';
+// import main from './vuerouter/main.js';
 
 // export
-export default `main`;
+export default main;
 ```
 
 ### 前端参数配置
