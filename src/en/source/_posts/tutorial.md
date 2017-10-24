@@ -579,7 +579,7 @@ module.exports = appInfo => {
 在`src/backend/config/locale`目录添加国际化文件，可以覆盖模块的国际化语言
 `zh-cn.js`文件中的语言定义示例如下
 ``` javascript
-export default {
+module.exports = {
   mode: '模式',
 };
 ```
