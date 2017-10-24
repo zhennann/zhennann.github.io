@@ -39,7 +39,7 @@
 <meta property="og:image" content="http://egg-born.org/zh-cn/images/structure.png">
 <meta property="og:image" content="http://egg-born.org/zh-cn/images/privatemodule.png">
 <meta property="og:image" content="http://egg-born.org/zh-cn/images/publicmodule.png">
-<meta property="og:updated_time" content="2017-10-24T07:19:12.000Z">
+<meta property="og:updated_time" content="2017-10-24T08:11:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EggBorn.js开发指南">
 <meta name="twitter:description" content="EggBorn.js是什么 EggBorn.js是一款顶级Javascript全栈开发框架。  EggBorn.js是采用Javascript进行全栈开发的最佳实践。EggBorn.js不重复造轮子，而是采用业界最新的开源技术，进行全栈开发的最佳组合。EggBorn.js前端采用Vue.js + Framework7 / Vue Router + Webpack，后端采用Koa.js + Egg.">
@@ -311,7 +311,7 @@
 <p>只支持在页面组件中访问本模块内部的参数配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mode = <span class="keyword">this</span>.$config.mode;</div></pre></td></tr></table></figure></p>
 <h4 id="前端国际化"><a href="#前端国际化" class="headerlink" title="前端国际化"></a>前端国际化</h4><p>在<code>front/src/config/locale</code>目录添加国际化文件<br><code>zh-cn.js</code>文件中的语言定义示例如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  mode: <span class="string">'模式'</span>,</div><div class="line">  <span class="string">"Hello world! I'm %s."</span>: <span class="string">'您好，世界！我是%s。'</span>,  </div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 <p>国际化语言采取全局合并的方式，有利于语言资源的共享，在页面组件中访问方式如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> mode = <span class="keyword">this</span>.$text(<span class="string">'mode'</span>);</div><div class="line"><span class="keyword">const</span> message = <span class="keyword">this</span>.$text(<span class="string">"Hello world! I'm %s."</span>,<span class="string">'zhennann'</span>);</div></pre></td></tr></table></figure></p>
-<h3 id="模块后端开发"><a href="#模块后端开发" class="headerlink" title="模块后端开发"></a>模块后端开发</h3><h4 id="后端api路由"><a href="#后端api路由" class="headerlink" title="后端api路由"></a>后端api路由</h4><p>在<code>backend/src/routes.js</code>中添加页面路由，如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> home = <span class="built_in">require</span>(<span class="string">'./controller/home.js'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = [</div><div class="line">  &#123; <span class="attr">method</span>: <span class="string">'get'</span>, <span class="attr">path</span>: <span class="string">'home/index'</span>, <span class="attr">controller</span>: home, <span class="attr">action</span>: <span class="string">'index'</span>, <span class="attr">transaction</span>: <span class="literal">true</span> &#125;,</div><div class="line">];</div></pre></td></tr></table></figure></p>
+<h3 id="模块后端开发"><a href="#模块后端开发" class="headerlink" title="模块后端开发"></a>模块后端开发</h3><h4 id="后端api路由"><a href="#后端api路由" class="headerlink" title="后端api路由"></a>后端api路由</h4><p>在<code>backend/src/routes.js</code>中添加api路由，如<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> home = <span class="built_in">require</span>(<span class="string">'./controller/home.js'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = [</div><div class="line">  &#123; <span class="attr">method</span>: <span class="string">'get'</span>, <span class="attr">path</span>: <span class="string">'home/index'</span>, <span class="attr">controller</span>: home, <span class="attr">action</span>: <span class="string">'index'</span>, <span class="attr">transaction</span>: <span class="literal">true</span> &#125;,</div><div class="line">];</div></pre></td></tr></table></figure></p>
 <blockquote>
 <ul>
 <li><code>method</code>: get/post等方法</li>
@@ -432,7 +432,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-10-24T07:19:12.000Z" itemprop="dateUpdated">2017-10-24 15:19:12</time>
+    最后更新时间：<time datetime="2017-10-24T08:11:00.000Z" itemprop="dateUpdated">2017-10-24 16:11:00</time>
 </span><br>
 
 

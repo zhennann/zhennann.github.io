@@ -212,7 +212,7 @@ const message = this.$text("Hello world! I'm %s.",'zhennann');
 ### 模块后端开发
 
 #### 后端api路由
-在`backend/src/routes.js`中添加页面路由，如
+在`backend/src/routes.js`中添加api路由，如
 ``` javascript
 const home = require('./controller/home.js');
 
