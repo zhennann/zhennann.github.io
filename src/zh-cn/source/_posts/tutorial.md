@@ -56,7 +56,7 @@ $ npm install
 
 ### 配置mysql连接参数
 
-如果采用了“front-backend-mysql”模板，请配置mysql连接参数（空数据库即可）
+如果采用了`front-backend-mysql`模板，请配置mysql连接参数（空数据库即可）
 
 编辑`src/backend/config/config.default.js`文件
 ``` javascript
