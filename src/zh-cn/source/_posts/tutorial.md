@@ -463,16 +463,12 @@ $ npm publish            -- 发布至npm仓库
 在`backend/test/controller`目录添加Controller测试文件
 ``` javascript
 // controller/home.test.js
-const { app, mock, assert } = require('egg-mock/bootstrap');
-const parseMockUrl = function(url) {
-  const prefix = app.mockUtil.parseUrlFromPackage(__dirname);
-  return `${prefix}${url}`;
-};
+const { app, mockUrl, assert } = require('egg-born-mock')(__dirname);
 
 describe('test/controller/home.test.js', () => {
 
   it('action:index', async () => {
-    const result = await app.httpRequest().get(parseMockUrl('home/index'));
+    const result = await app.httpRequest().get(mockUrl('home/index'));
     assert(result.body.code === 0);
   });
 
@@ -483,15 +479,12 @@ describe('test/controller/home.test.js', () => {
 在`backend/test/service`目录添加Service测试文件
 ``` javascript
 // service/home.test.js
-const { app, mock, assert } = require('egg-mock/bootstrap');
-const parseMockUrl = function() {
-  return app.mockUtil.parseUrlFromPackage(__dirname);
-};
+const { app, mockUrl, assert } = require('egg-born-mock')(__dirname);
 
 describe('test/service/home.test.js', () => {
 
   it('index', async () => {
-    const ctx = app.mockContext({ mockUrl: parseMockUrl() });
+    const ctx = app.mockContext({ mockUrl: mockUrl() });
     const message = await ctx.service.home.index();
     assert(message);
   });

@@ -488,16 +488,12 @@ Only backend test driven development is supported currently.
 In the directory `backend/test/controller`, add controller test file:
 ``` javascript
 // controller/home.test.js
-const { app, mock, assert } = require('egg-mock/bootstrap');
-const parseMockUrl = function(url) {
-  const prefix = app.mockUtil.parseUrlFromPackage(__dirname);
-  return `${prefix}${url}`;
-};
+const { app, mockUrl, assert } = require('egg-born-mock')(__dirname);
 
 describe('test/controller/home.test.js', () => {
 
   it('action:index', async () => {
-    const result = await app.httpRequest().get(parseMockUrl('home/index'));
+    const result = await app.httpRequest().get(mockUrl('home/index'));
     assert(result.body.code === 0);
   });
 
@@ -509,15 +505,12 @@ describe('test/controller/home.test.js', () => {
 In the directory `backend/test/service`, add service test file:
 ``` javascript
 // service/home.test.js
-const { app, mock, assert } = require('egg-mock/bootstrap');
-const parseMockUrl = function() {
-  return app.mockUtil.parseUrlFromPackage(__dirname);
-};
+const { app, mockUrl, assert } = require('egg-born-mock')(__dirname);
 
 describe('test/service/home.test.js', () => {
 
   it('index', async () => {
-    const ctx = app.mockContext({ mockUrl: parseMockUrl() });
+    const ctx = app.mockContext({ mockUrl: mockUrl() });
     const message = await ctx.service.home.index();
     assert(message);
   });
