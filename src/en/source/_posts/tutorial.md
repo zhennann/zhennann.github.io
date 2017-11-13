@@ -3,6 +3,7 @@ title: EggBorn.js Development Guide
 caption: tutorial
 date: 2017-10-17 18:18:14
 category: docs
+showIndex: 1
 ---
 
 ## What is EggBorn.js?
