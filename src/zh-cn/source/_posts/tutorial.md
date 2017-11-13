@@ -528,7 +528,7 @@ export default main;
 `src/front/config/config.js`文件中的参数配置可以覆盖模块的参数
 ``` javascript
 export default{
-  module: {
+  modules: {
     'aa-hello': {
       mode: 2,
     },
@@ -558,7 +558,7 @@ module.exports = appInfo => {
   const config = {};
 
   // module config
-  config.module = {
+  config.modules = {
     'aa-hello': {
       mode: 2,
     },

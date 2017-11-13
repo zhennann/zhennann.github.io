@@ -557,7 +557,7 @@ export default main;
 The parameters of the file `src/front/config/config.js` can override the parameters of the modules
 ``` javascript
 export default{
-  module: {
+  modules: {
     'aa-hello': {
       mode: 2,
     },
@@ -590,7 +590,7 @@ module.exports = appInfo => {
   const config = {};
 
   // module config
-  config.module = {
+  config.modules = {
     'aa-hello': {
       mode: 2,
     },
