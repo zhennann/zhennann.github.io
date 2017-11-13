@@ -19,7 +19,7 @@ showIndex: 2
 - 全局Indicator显示与隐藏
 - “上拉刷新”与“下拉加载”
 - LoadMore组件设计
-- Form validate
+- Form Validate
 - Login页面跳转逻辑
 - GitHub Passport整合
 
